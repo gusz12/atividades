@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: white;
+            color: white;
+        }
+        
+        h1, h2 {
+            font-size: 50px;
+            background-color: aqua;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        p {
+            color: white;
+            background-color: #0f5eb5;
+            text-align: center;
+            width: 470px;
+            margin: 20px auto;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        
+        input, select, button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 200px;
+            border-radius: 10px;
+            border: 1px solid #0f5eb5;
+        }
+
+        button {
+            background-color: #0f5eb5;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #094c93;
+        }
+
+        #exibir, #calc, #resultado, #rodape, #rodape2 {
+            background-color: #0f5eb5;
+            padding: 20px;
+            margin: 20px auto;
+            width: 400px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #exibir {
+            font-size: 20px;
+        }
+
+        #calc {
+            font-size: 18px;
+        }
+
+        #rodape, #rodape2 {
+            font-size: 12px;
+        }
+
+        #calcular {
+            background-color: #0f5eb5;
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+            border: gray;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        #p_binario, #p_decimal, #p_octal, #p_hexadecimal {
+            background-color: #0f5eb5;
+            font-size: 12px;
+            padding: 10px;
+            margin: 10px auto;
+            width: 300px;
+            border-radius: 5px;
+            text-align: justify;
+        }
+
+        #p_binario {
+            position: relative;
+            top: 40px;
+            left: -15%;
+        }
+
+        #p_decimal {
+            position: relative;
+            top: 40px;
+            left: -15%;
+        }
+
+        #p_octal {
+            position: relative;
+            top: -244px;
+            left: 15%;
+        }
+
+        #p_hexadecimal {
+            position: relative;
+            top: -240px;
+            left: 15%;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1>
+        CONVERTER PRO
+    </h1>
+    <strong><p>
+        DIGITE O NÚMERO DECIMAL QUE DESEJA CONVERTER:
+    </p></strong>
+    <input type="number" id="ipt_num">
+    <br> <br>
+    <button onclick="converter()">CONVERTER</button>
+    <div id="exibir">
+        SEU NÚMERO EM:
+        <br><br>
+        Binário:
+        <br>
+        Octal:
+        <br>
+        Hexadecimal:
+    </div>
+    <br>
+    <!--------------------------------------------------------------------->
+
+    <!-- Parte Calculadora -->
+
+   <h2>
+    CALCULADORA
+   </h2>
+   <strong><p id="calc">
+    DIGITE OS NÚMEROS QUE DESEJA CALCULAR:
+   </p></strong>
+   <select id="escolha">
+    <option value="decimal">Decimal</option>
+    <option value="binario">Binário</option>
+    <option value="octal">Octal</option>
+    <option value="hexadecimal">Hexadecimal</option>
+   </select>
+   <select id="escolha2">
+    <option value="decimal">Decimal</option>
+    <option value="binario">Binário</option>
+    <option value="octal">Octal</option>
+    <option value="hexadecimal">Hexadecimal</option>
+   </select>
+
+   <input type="number" id="numero1">
+   <input type="number" id="numero2">
+
+   <select id="SELECT_calcular">
+    <option value="somar">+</option>
+    <option value="subtrair">-</option>
+    <option value="multi">x</option>
+    <option value="dividir">/</option>
+   </select>
+   <div id="resultado">
+    Resultado em: 
+        <br>
+        Decimal: 
+         <br>
+        Binário: 
+         <br>
+        Octal: 
+        <br>
+        Hexadecimal: 
+   </div>
+
+   <button id="calcular" onclick="CALCULAR()">Calcular</button>
+
+
+
+
+   <!-- Informações sobre as conversões-->
+   <p id="p_binario">
+    BINÁRIOS:
+    <br>
+    Números binários, são números que só possuem 0 ou 1, por exemplo 1010011010. 
+    Nós estamos acostumados a usar números decimais, que são formados 
+    por 0, 1, 2, 3, 4, 5, 6, 7, 8 e 9, como por exemplo, 24601, mas dentro do computador, 
+    os números são sempre binários.
+   </p>
+   <p id="p_decimal">
+    DECIMAL:
+    <br>
+    Os números decimais são números racionais (Q) não inteiros expressos 
+    por vírgulas e que possuem casas decimais, por exemplo: 1,54; 4,6; 8,9, etc. 
+    Eles podem ser positivos ou negativos.
+    
+    As casas decimais são contadas a partir da vírgula, 
+    por exemplo o número 12,451 possui três casas decimais, ou seja, três algarismos após a vírgula.
+   </p>
+   <p id="p_octal">
+    OCTAL:
+    <br>
+    O Sistema Numérico Octal tem uma base de oito e usa os números de 0 a 7. Os números octais, no sistema numérico , 
+    são geralmente representados por números binários quando são agrupados em pares de três. Por exemplo, um número 
+    octal 12 8  é expresso como 001010 2  no sistema binário, onde 1 é equivalente a 001 e 2 é equivalente a 010.
+   </p>
+   <p id="p_hexadecimal">
+    HEXADECIMAL: 
+    <br>
+    O sistema de números hexadecimais é baseado na base 16 e utiliza 16 símbolos diferentes para representar valores. 
+    Os dígitos de 0 a 9 são usados para os primeiros dez valores, enquanto as letras de A a F representam os valores 
+    de 10 a 15. Essa característica torna o sistema hexadecimal altamente eficiente para representar grandes números 
+    de forma compacta, sendo amplamente empregado em funções computacionais.
+   </p>
+   <p id="rodape">
+    Feito por Gustavo Anthony Vieira de Menezes - 1CCOA
+   </p>
+   <p id="rodape2">
+    Para mais detalhes falar com Célia Taniwaki ou Matheus Matos
+   </p>
+</body>
+</html>
+<script>
+    function converter(){
+        var num = Number(ipt_num.value);
+        var num_b2 = num.toString(2);
+        var num_b8 = num.toString(8);
+        var num_b16 = num.toString(16);
+
+        exibir.innerHTML = `
+         SEU NÚMERO EM:
+        <br>
+        <br>
+        Binário: ${num_b2}
+        <br>
+        Octal: ${num_b8}
+        <br>
+        Hexadecimal: ${num_b16}
+        `;
+    }
+    //Calculadora
+    function CALCULAR(){
+        var num1 = Number(numero1.value);
+        var num2 = Number(numero2.value);
+        var esc1 = escolha.value;
+        var esc2 = escolha2.value;
+        var operacao = SELECT_calcular.value;
+
+
+        //Convertendo 1º número;
+        if(esc1 == 'decimal'){
+            num1 = parseInt(num1, 10);
+        }
+        if(esc1 == 'binario'){
+            num1 = parseInt(num1, 2);
+        }
+        if(esc1 == 'octal'){
+            num1 = parseInt(num1, 8);
+        }
+        if(esc1 == 'hexadecimal'){
+            num1 = parseInt(num1, 16);
+        }
+
+        //Convertendo 2º número;
+        if(esc2 == 'decimal'){
+            num2 = parseInt(num2, 10);
+        }
+        if(esc2 == 'binario'){
+            num2 = parseInt(num2, 2);
+        }
+        if(esc2 == 'octal'){
+            num2 = parseInt(num2, 8);
+        }
+        if(esc2 == 'hexadecimal'){
+            num2 = parseInt(num2, 16);
+        }
+
+        //Realizando a operação matemática;
+        if(operacao == 'somar'){
+            var result = num1 + num2;
+        }
+        if(operacao == 'subtrair'){
+            var result = num1 - num2; 
+        }
+        if(operacao == 'multi'){
+            var result = num1 * num2; 
+        }
+        if(operacao == 'dividir'){
+            var result = num1 / num2; 
+        }
+        var result_2 = result.toString(2);
+        var result_8 = result.toString(8);
+        var result_16 = result.toString(16);
+        var result_10= result.toString(10);
+        resultado.innerHTML = `
+        Resultado em: 
+        <br>
+        Decimal: ${result_10}
+         <br>
+        Binário: ${result_2}
+         <br>
+        Octal: ${result_8}
+        <br>
+        Hexadecimal: ${result_16}
+        `;
+    }
+</script>
