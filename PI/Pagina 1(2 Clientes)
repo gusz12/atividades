@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aula CSS - 1</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="card">
+
+		<div class="imagem-perfil">
+			<img src="https://cdn-icons-png.flaticon.com/512/706/706830.png" alt="Imagem do perfil">
+		</div>
+
+		<div class="mensagem">
+			<h1>
+				Meu nome é: <span class="cor-padrao">Adriana</span>
+			</h1>
+
+			<p>
+				Mensagem: <span class="cor-padrao estilo-texto">A vida não é um morango! E tá tudo bem.</span>
+			</p>
+		</div>
+	</div>
+
+	<div class="card">
+
+		<div class="imagem-perfil">
+			<img 
+				src="https://cdn-icons-png.flaticon.com/256/3681/3681928.png" alt="">
+		</div>
+
+		<div class="mensagem">
+			<h1>
+				Meu nome é: <span class="cor-padrao">Hugo</span>
+			</h1>
+
+			<p>
+				Mensagem: <span class="cor-padrao estilo-texto">Um dia é da caça, o outro é do caçador.</span>
+			</p>
+		</div>
+	</div>
+
+</body>
+
+</html>
